@@ -1,0 +1,24 @@
+package dataset;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.fluttercode.datafactory.impl.DataFactory;
+
+public class Main {
+	
+	public static void main(String[] args) throws IOException {
+		int i=1;
+		DataFactory df = new DataFactory();
+		while(true){
+			
+			File file = new File("/home/cloudera/Desktop/small.txt");
+			FileWriter fr = new FileWriter(file, true);
+			String name = i+","+df.getCity()+","+df.getNumberText(5);
+			System.out.println(name);
+			fr.write(name+"\n");
+			fr.close();
+			i++;
+		}
+	}
+}
